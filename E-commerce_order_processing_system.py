@@ -48,7 +48,7 @@ def add_to_cart(product_id, quantity):
                      return
 
                 # if not there it will add     
-             cart.append({"product": p, "quantity": quantity})
+             cart.append({"product": p, "quantity": quantity}) # key -value inside cart
              print(f"{p['name']} (X{quantity}) added to cart!\n")
              return
     print("Product not found \n")
@@ -61,4 +61,18 @@ def view_cart():
     
     print("\n your cart")
     total = 0 # track total cost
+
+    for i, item in enumerate(cart):
+        name = item['product']['name']
+        price = item['product']['price']
+        qty = item['quantity']
+
+        sub_total = price * qty
+        total += sub_total
+
+        print(f"{i + 1}. {name} - Rs.{price} X {qty} = Rs.{sub_total}")
+    print(f"Total: Rs.{total}")
+
+
+# Function to remove an item from the cart using its index
 
