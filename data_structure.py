@@ -149,3 +149,36 @@ grade.setdefault('science', []).append(92)
 for subject, score in grade.items(): # subject and score are the key and value automatically unpacked by the for loop key and value
     avg = sum(score) / len(score)
     print(f"Average score for {subject}: {avg}")
+
+#nested dictionaries
+mender1 ={
+    'name' : 'Anoj',
+    'age' : 21,
+}
+
+member2 = {
+    'name' : 'Paru',
+    'age' : 20,
+}
+
+nested_dict = {
+    'member1' : mender1,
+    'member2' : member2
+}
+
+print(nested_dict)
+
+
+
+
+
+#----------------------------------Set--------------------------------
+#Unordered collection of unique items, Mutable
+
+#syntax :-> set_name = {item1, item2, item3}
+# empty_set = set()  # Correct empty set
+#it helps to remove duplicates
+
+nums = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5}
+
+print(nums)
