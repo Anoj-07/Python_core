@@ -39,15 +39,26 @@ def show_product():
 #function to add a product to cart (with quantity support)
 def add_to_cart(product_id, quantity):
     for p in products:
-        if p["id"] == product_id:
-             
+        if p["id"] == product_id: # if user input matches p['id'] 
              # if product is already in cart, increase qunatity
              for item in cart:
                  if item["product"]["id"] == product_id: 
                      item["quantity"] += quantity
                      print(f"Added {quantity} more {p['name']} to cart.\n")
                      return
+
+                # if not there it will add     
              cart.append({"product": p, "quantity": quantity})
              print(f"{p['name']} (X{quantity}) added to cart!\n")
              return
     print("Product not found \n")
+
+#function to view all items in the cart
+def view_cart():
+    if not cart:
+        print("Your cart is empty! \n")
+        return
+    
+    print("\n your cart")
+    total = 0 # track total cost
+
